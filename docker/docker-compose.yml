@@ -20,7 +20,7 @@ services:
 
     privileged: true
 
-    command: 
+    command:
       - /bin/bash
       - -c
       - |

@@ -1,6 +1,5 @@
 FROM ros:humble-ros-base
 
-# Install only what is necessary
 RUN apt-get update && apt-get install -y \
     git \
     python3-colcon-common-extensions \
@@ -12,7 +11,6 @@ RUN apt-get update && apt-get install -y \
 #    && rm -rf /var/lib/apt/lists/*
 
 RUN add-apt-repository universe && apt update
-
 
 # Create workspace
 WORKDIR /ros2_ws/src
