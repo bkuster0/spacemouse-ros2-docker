@@ -25,6 +25,9 @@ WORKDIR /ros2_ws
 RUN . /opt/ros/humble/setup.sh && \
     colcon build --symlink-install
 
+# Copy FastDDS config to disable shared memory and rely on UDP
+COPY fastrtps_udp_only.xml /
+
 # Source entrypoint
 RUN echo "source /ros2_ws/install/setup.bash" >> /root/.bashrc
 
